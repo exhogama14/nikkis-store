@@ -1,4 +1,4 @@
-﻿"""
+"""
 Gunicorn Production Configuration
 ---------------------------------
 Run with:
@@ -11,8 +11,8 @@ import multiprocessing
 import os
 
 # ---------- Bind / Network ----------
-# Override with: BIND="0.0.0.0:8000"
-bind = os.environ.get("BIND", "0.0.0.0:8000")
+# Override with: BIND="0.0.0.0:7777"
+bind = os.environ.get("BIND", "0.0.0.0:7777")
 
 # ---------- Worker Model ----------
 # Recommended formula: (2 x CPU cores) + 1

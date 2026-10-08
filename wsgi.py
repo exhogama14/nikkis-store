@@ -1,4 +1,4 @@
-﻿"""
+"""
 WSGI Entry Point for Gunicorn, Hypercorn, and Production Servers
 ---------------------------------------------------
 This module exposes the Flask application instance as `app`.
@@ -19,7 +19,11 @@ import os
 _INSTANCE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "instance")
 os.makedirs(_INSTANCE_DIR, exist_ok=True)
 
-from app import app  # noqa: E402  (the Flask instance)
+from app import app, db  # noqa: E402  (the Flask instance)
+
+# Initialize database on startup
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     # Convenience for local production testing:

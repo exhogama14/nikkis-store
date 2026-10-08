@@ -49,21 +49,14 @@
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
     }
     .card-logo {
-        height: 38px;
+        height: 32px;
         width: auto;
-        opacity: 1;
-        transition: transform 0.2s ease, filter 0.2s ease;
-        filter: drop-shadow(0 3px 6px rgba(15, 23, 42, 0.12));
-        background: rgba(255,255,255,0.4);
-        border-radius: 8px;
+        max-width: 60px;
+        opacity: 0.9;
+        transition: opacity 0.2s ease;
+        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
     }
-    .card-logo:hover { transform: scale(1.06); }
-    .card-preview { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3); position: relative; overflow: hidden; }
-    .card-preview::before { content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); }
-    .card-chip { width: 40px; height: 30px; background: linear-gradient(135deg, #fbbf24, #d97706); border-radius: 6px; margin-bottom: 30px; }
-    .card-number-display { font-size: 20px; letter-spacing: 2px; font-family: monospace; margin-bottom: 20px; font-weight: 600; }
-    .card-details { display: flex; justify-content: space-between; font-size: 14px; text-transform: uppercase; }
-    .secure-badge { display: flex; align-items: center; gap: 8px; color: #059669; font-size: 13px; font-weight: 600; margin-top: 24px; justify-content: center; padding: 12px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 8px; }
+    .card-logo:hover { opacity: 1; }
     .input-icon { position: relative; }
     .input-icon label {
         display: block;
@@ -100,6 +93,20 @@
     .checkout-form select:focus {
         border-color: #7c3aed !important;
         box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+    }
+    .secure-badge { 
+        display: flex; 
+        align-items: center; 
+        gap: 8px; 
+        color: #059669; 
+        font-size: 13px; 
+        font-weight: 600; 
+        margin-top: 24px; 
+        justify-content: center; 
+        padding: 12px; 
+        background: rgba(16, 185, 129, 0.08); 
+        border: 1px solid rgba(16, 185, 129, 0.2); 
+        border-radius: 8px; 
     }
 </style>
 
@@ -188,19 +195,12 @@
             <!-- Payment Info -->
             <div class="section-title">Payment Details</div>
             
-            <!-- Card Logos -->
+            <!-- Card Logos - Clean versions -->
             <div class="card-logos">
-                <!-- Visa -->
-                <svg class="card-logo" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="40" rx="4" fill="#1434CB"/><path d="M15 14l-4 12h3l1.2-4h4.6l1.2 4h3L19.8 14h-4.8zm-0.8 9.2l1.6-5 1.6 5h-3.2z" fill="white"/><path d="M30 14l-3.5 12h2.8l3.5-12H30z" fill="white"/><path d="M41 14l-2.2 6.4-0.8-6.4h-2.8l-0.8 6.4L33.4 14h-3l4 12h2.8l0.8-6 0.8 6h2.8l4-12h-3z" fill="white"/><path d="M52 14l-4 12h3l1.2-4h4.6l1.2 4h3L56.8 14h-4.8zm-0.8 9.2l1.6-5 1.6 5h-3.2z" fill="white"/></svg>
-                <!-- Mastercard -->
-                <svg class="card-logo" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="40" rx="4" fill="white" stroke="#E0E0E0" stroke-width="0.5"/><circle cx="24" cy="20" r="12" fill="#EB001B"/><circle cx="40" cy="20" r="12" fill="#F79E1B"/><path d="M32 10c-4 3-6 7.5-6 10s2 7 6 10c4-3 6-7.5 6-10s-2-7-6-10z" fill="#FF5F00"/></svg>
-                <!-- Amex -->
-                <svg class="card-logo" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="40" rx="4" fill="#016FD0"/><path d="M12 12h40v16H12z" fill="#016FD0"/><text x="32" y="26" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">AMEX</text></svg>
-                <!-- Discover -->
-                <svg class="card-logo" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="40" rx="4" fill="white" stroke="#E0E0E0" stroke-width="0.5"/><circle cx="32" cy="20" r="14" fill="#FF6000"/><circle cx="32" cy="20" r="10" fill="white"/><circle cx="32" cy="20" r="7" fill="#FF6000"/><text x="32" y="24" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">DISC</text></svg>
+                <svg class="card-logo" viewBox="0 0 80 50" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="50" rx="6" fill="#1434CB"/><text x="40" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">VISA</text></svg>
+                <svg class="card-logo" viewBox="0 0 80 50" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="50" rx="6" fill="white" stroke="#E0E0E0" stroke-width="1"/><circle cx="28" cy="25" r="12" fill="#EB001B"/><circle cx="52" cy="25" r="12" fill="#F79E1B"/></svg>
+                <svg class="card-logo" viewBox="0 0 80 50" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="50" rx="6" fill="#006FCF"/><text x="40" y="32" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">AMEX</text></svg>
             </div>
-
-            <!-- Card Preview removed -->
 
             <!-- Inputs -->
             <div class="form-group input-icon">
@@ -232,7 +232,6 @@
                     <option value="Visa">Visa</option>
                     <option value="Mastercard">Mastercard</option>
                     <option value="Amex">American Express</option>
-                    <option value="Discover">Discover</option>
                 </select>
             </div>
 
